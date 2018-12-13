@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="363.0" prefWidth="347.0" 
+	xmlns="http://javafx.com/javafx/8" 
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="Controllers.SearchController">
+   <children>
+      <Label fx:id="labelTittlTK" alignment="CENTER" prefHeight="27.0" prefWidth="347.0" text="Tìm kiếm sinh viên" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="244.0" text="Nhập ID sinh viên bạn cần tìm:" />
+      <TextField fx:id="txtInputID" layoutX="181.0" layoutY="240.0" prefHeight="25.0" prefWidth="82.0" />
+      <Button fx:id="btnTimKiem" layoutX="271.0" layoutY="240.0" mnemonicParsing="false" onAction="#TimKiem" text="Tìm kiếm" />
+      <TableView fx:id="ListTable" layoutX="14.0" layoutY="27.0" prefHeight="200.0" prefWidth="322.0">
+        <columns>
+          <TableColumn fx:id="IDColumn" prefWidth="43.0" text="ID" />
+          <TableColumn fx:id="NameColumn" prefWidth="114.0" text="Name" />
+            <TableColumn fx:id="AgeColumn" prefWidth="36.0" text="Age" />
+            <TableColumn fx:id="AddressColumn" prefWidth="128.0" text="Address" />
+        </columns>
+      </TableView>
+      <TableView fx:id="ResultTable" layoutX="13.0" layoutY="279.0" prefHeight="70.0" prefWidth="322.0">
+        <columns>
+          <TableColumn fx:id="IDResult" prefWidth="45.0" text="ID" />
+          <TableColumn fx:id="NameResult" prefWidth="115.0" text="Name" />
+            <TableColumn fx:id="AgeResult" prefWidth="36.0" text="Age" />
+            <TableColumn fx:id="AddressResult" prefWidth="125.0" text="Address" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

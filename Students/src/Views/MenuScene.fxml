@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="256.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MenuController">
+   <children>
+      <Label fx:id="labelTiltle" alignment="CENTER" contentDisplay="BOTTOM" layoutY="-3.0" prefHeight="34.0" prefWidth="256.0" text="Quản lý sinh viên" textAlignment="CENTER">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnList" layoutX="55.0" layoutY="56.0" mnemonicParsing="false" onAction="#ViewList" prefHeight="34.0" prefWidth="147.0" text="Danh sách sinh viên" />
+      <Button fx:id="btnInformation" layoutX="55.0" layoutY="176.0" mnemonicParsing="false" onAction="#EditorInfor" prefHeight="34.0" prefWidth="147.0" text="Thông tin" />
+      <Button fx:id="btnExit" layoutX="55.0" layoutY="232.0" mnemonicParsing="false" onAction="#ExitApp" prefHeight="34.0" prefWidth="147.0" text="Thoát" />
+      <Button fx:id="btnSearch" layoutX="55.0" layoutY="119.0" mnemonicParsing="false" onAction="#SearchStudents" prefHeight="34.0" prefWidth="147.0" text="Tìm kiếm sinh viên" />
+   </children>
+</AnchorPane>

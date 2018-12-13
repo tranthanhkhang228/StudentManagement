@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="256.0" prefWidth="247.0" 
+	xmlns="http://javafx.com/javafx/8" 
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="Controllers.InsertController">
+   <children>
+      <Label fx:id="labelThemSV" alignment="CENTER" layoutY="1.0" prefHeight="17.0" prefWidth="247.0" text="Thêm sinh viên">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutY="38.0" text="Nhập đầy đủ thông tin để thêm sinh viên:" />
+      <Label layoutX="21.0" layoutY="68.0" prefHeight="17.0" prefWidth="39.0" text="ID:" />
+      <Label layoutX="21.0" layoutY="104.0" text="Họ tên:" />
+      <Label layoutX="21.0" layoutY="140.0" prefHeight="17.0" prefWidth="39.0" text="Tuổi:" />
+      <Label layoutX="21.0" layoutY="174.0" prefHeight="17.0" prefWidth="39.0" text="Địa chỉ:" />
+      <Button fx:id="btnThemSV" layoutX="85.0" layoutY="206.0" mnemonicParsing="false" onAction="#ThemSinhVien" text="Thêm sinh viên" />
+      <TextField fx:id="txtID" layoutX="72.0" layoutY="64.0" />
+      <TextField fx:id="txtName" layoutX="72.0" layoutY="100.0" />
+      <TextField fx:id="txtAge" layoutX="72.0" layoutY="136.0" />
+      <TextField fx:id="txtAddress" layoutX="72.0" layoutY="170.0" />
+   </children>
+</AnchorPane>

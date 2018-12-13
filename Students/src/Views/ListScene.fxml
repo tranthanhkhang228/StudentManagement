@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="289.0" prefWidth="384.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListController">
+   <children>
+      <Label alignment="CENTER" layoutY="1.0" prefHeight="27.0" prefWidth="384.0" text="Danh sách sinh viên">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="ListTable" layoutX="23.0" layoutY="41.0" prefHeight="200.0" prefWidth="340.0">
+        <columns>
+          <TableColumn fx:id="IDColumn" prefWidth="37.0" text="ID" />
+          <TableColumn fx:id="NameColumn" prefWidth="136.0" text="Name" />
+            <TableColumn fx:id="AgeColumn" prefWidth="39.0" text="Age" />
+            <TableColumn fx:id="AddressColumn" prefWidth="127.0" text="Address" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnInsert" layoutX="14.0" layoutY="253.0" mnemonicParsing="false" onAction="#InsertStudent" text="Thêm sinh viên" />
+      <Button layoutX="139.0" layoutY="253.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="Chỉnh sửa thông tin" />
+      <Button fx:id="btnDelete" layoutX="282.0" layoutY="253.0" mnemonicParsing="false" onAction="#DeleteStudent" text="Xóa sinh viên" />
+   </children>
+</AnchorPane>

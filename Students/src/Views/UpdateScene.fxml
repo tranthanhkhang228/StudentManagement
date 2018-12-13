@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="412.0" prefWidth="369.0" 
+	xmlns="http://javafx.com/javafx/8" 
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="Controllers.UpdateController">
+   <children>
+      <Label alignment="CENTER" prefHeight="27.0" prefWidth="324.0" text="Sửa thông tin">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="ListTable" layoutX="14.0" layoutY="27.0" prefHeight="200.0" prefWidth="342.0">
+        <columns>
+          <TableColumn fx:id="IDColumn" prefWidth="41.0" text="ID" />
+            <TableColumn fx:id="NameColumn" prefWidth="113.0" text="Name" />
+            <TableColumn fx:id="AgeColumn" prefWidth="42.0" text="Age" />
+            <TableColumn fx:id="AddressColumn" prefWidth="145.0" text="Address" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="236.0" text="Nhập ID sinh viên bạn muốn thay đổi" />
+      <TextField fx:id="txtInputID" layoutX="220.0" layoutY="232.0" prefHeight="25.0" prefWidth="66.0" />
+      <Button fx:id="btnTim" layoutX="291.0" layoutY="232.0" mnemonicParsing="false" onAction="#SearchStudent" prefHeight="25.0" prefWidth="66.0" text="Tìm" />
+      <Label layoutX="12.0" layoutY="276.0" prefHeight="17.0" prefWidth="43.0" text="ID" />
+      <Label layoutX="12.0" layoutY="310.0" prefHeight="17.0" prefWidth="43.0" text="Name" />
+      <Label layoutX="12.0" layoutY="346.0" prefHeight="17.0" prefWidth="43.0" text="Age" />
+      <Label layoutX="12.0" layoutY="377.0" text="Address" />
+      <TextField fx:id="txtID" layoutX="79.0" layoutY="272.0" />
+      <TextField fx:id="txtName" layoutX="79.0" layoutY="306.0" />
+      <TextField fx:id="txtAge" layoutX="79.0" layoutY="342.0" />
+      <TextField fx:id="txtAddress" layoutX="79.0" layoutY="373.0" />
+      <Button fx:id="btnUpdate" layoutX="291.0" layoutY="272.0" mnemonicParsing="false" onAction="#UpdateStudent" prefHeight="25.0" prefWidth="66.0" text="Update" />
+   </children>
+</AnchorPane>
