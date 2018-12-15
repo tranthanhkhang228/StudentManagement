@@ -24,6 +24,8 @@ public class InsertController{
 
 	private StudentDAO newsDAO = new StudentDAO();
 	
+	private String WorkingStatus;
+	
 	@FXML
 	private TextField txtID;
 	
@@ -68,6 +70,10 @@ public class InsertController{
 		this.menu = menu;
 	}	
 	
+	public void setWorkingStatus(String workingstatus) {
+		this.WorkingStatus = workingstatus;
+	}
+	
 	//Get information
 	public Student getStudent() {
 		Student student = new Student();
@@ -89,21 +95,30 @@ public class InsertController{
 	
 	//Insert a new student
 	public void InsertStudent(ActionEvent event) {
-		InsertStage.close();
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.initOwner(menu.getMenuStage());
 		alert.initModality(Modality.WINDOW_MODAL);
 		alert.setTitle("Notification!");
 		
-		if(newsDAO.InsertStudent(getStudent()) == 1) {
-			menu.getListStudent().add(getStudent());
+		if(WorkingStatus.equals("Database")) {
+			InsertStage.close();
+			if(newsDAO.InsertStudent(getStudent()) == 1) {
+				menu.getListStudentFromDatabase().add(getStudent());
+				alert.setHeaderText("Succeeded!");
+				alert.setContentText("You have inserted a new student!");
+			} else {
+				alert.setHeaderText("Failed!");
+				alert.setContentText("Can not insert a new student!");
+			}
+			alert.show();
+		}
+		else {
+			menu.getListStudentFromXML().add(getStudent());
+			InsertStage.close();
 			alert.setHeaderText("Succeeded!");
 			alert.setContentText("You have inserted a new student!");
-		} else {
-			alert.setHeaderText("Failed!");
-			alert.setContentText("Can not insert a new student!");
+			alert.show();
 		}
-		alert.show();
 	}
 	
 	//Close insert stage

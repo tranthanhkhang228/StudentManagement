@@ -1,5 +1,6 @@
 package Controller;
 
+import java.io.File;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -95,6 +96,12 @@ public class LoginController {
 			
 			MenuController controller = loader.getController();
 			controller.setMenuStage(MenuStage);
+			
+			//Try to load opened student file
+			File file = controller.getStudentFilePath();
+			if(file != null) {
+				controller.loadStudentDataFromFile(file);
+			}
 			
 		} catch (IOException ex) {
 			ex.printStackTrace();

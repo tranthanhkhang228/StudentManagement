@@ -28,6 +28,8 @@ public class UpdateController {
 	
 	private Student tempStudent;
 	
+	private String WorkingStatus;
+	
 	@FXML
 	private TextField txtID;
 	
@@ -63,6 +65,10 @@ public class UpdateController {
 	
 	@FXML
 	private Button btnCancel;
+	
+	public void setWorkingStatus(String workingstatus) {
+		this.WorkingStatus = workingstatus;
+	}
 	
 	public void setUpdateStage(Stage UpdateStage) {
 		this.UpdateStage = UpdateStage;
@@ -119,20 +125,28 @@ public class UpdateController {
 	
 	//Update student
 	public void UpdateStudent(ActionEvent event) {
-		UpdateStage.close();
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.initOwner(menu.getMenuStage());
 		alert.initModality(Modality.WINDOW_MODAL);
 		alert.setTitle("Notification!");
-		
-		if(newsDAO.UpdateStudent(getStudent(),tempID) == 1) {
+		if(WorkingStatus.equals("Database")) {
+			UpdateStage.close();
+			if(newsDAO.UpdateStudent(getStudent(),tempID) == 1) {
+				alert.setHeaderText("Succeeded!");
+				alert.setContentText("You have updated student!");
+			} else {
+				alert.setHeaderText("Failed!");
+				alert.setContentText("Can not update student!");
+			}
+			alert.show();
+		}
+		else {
+			getStudent();
+			UpdateStage.close();
 			alert.setHeaderText("Succeeded!");
 			alert.setContentText("You have updated student!");
-		} else {
-			alert.setHeaderText("Failed!");
-			alert.setContentText("Can not update student!");
+			alert.show();
 		}
-		alert.show();
 	}
 	
 	//Close update stage
